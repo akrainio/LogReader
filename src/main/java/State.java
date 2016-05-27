@@ -40,24 +40,13 @@ class State {
         this.key = stringToDate(key);
         noResult = false;
     }
-    /**
-     * Gets date from a string according to sdf's pattern
-     * @param line String from which date is extracted. String
-     *             must start with a timestamp.
-     * @return <code>Date</code> extracted from the timestamp
-     *         in the string.
-     * @throws ParseException
-     */
+
+    //Gets date from a string according to sdf's pattern.
     private Date stringToDate(String line) throws ParseException {
         return sdf.parse(line);
     }
 
-    /**
-     * Gets first complete line in a file after given index
-     * @param index Location from which to start looking.
-     * @return First complete line after index.
-     * @throws IOException
-     */
+    //Gets first complete line in a file after given index
     private String getLine(long index) throws IOException {
         assert file.length() > index;
         file.seek(index);
@@ -65,11 +54,7 @@ class State {
         return file.readLine();
     }
 
-    /**
-     * Sets mid to be halfway between min and max
-     * @throws IOException
-     * @throws ParseException
-     */
+    //Sets mid to be halfway between min and max
     private void resetMid() throws IOException, ParseException {
         long prevMid = mid;
         mid = min + (max - min) / 2;

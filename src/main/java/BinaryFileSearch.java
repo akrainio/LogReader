@@ -47,13 +47,8 @@ public class BinaryFileSearch {
         return lineList;
     }
 
-    /**
-     * Recursive function initiated by <code>find()</code> that
-     * performs a binary search.
-     * @param status
-     * @throws IOException
-     * @throws ParseException
-     */
+    //Recursive function initiated by <code>find()</code> that
+    //performs a binary search.
     private void binarySearch(State status) throws IOException, ParseException {
         if (status.noResult) {
             System.err.println("Time stamp [" + status.getKeyString() + "] not present in file");
@@ -79,12 +74,8 @@ public class BinaryFileSearch {
         }
     }
 
-    /**
-     * Compares given state's mid to key
-     * @param status
-     * @return 1 if mid is after key, 0 if mid is equal to key,
-     * and -1 if mid is before key
-     */
+    //Compares given state's mid to key. Returns 1 if mid is after key, 0 if mid is equal to key,
+    //and -1 if mid is before key
     private int compare(State status) {
         if (status.getMid().after(status.getKey())) return 1;
         if (status.getMid().before(status.getKey())) return -1;
